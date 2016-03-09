@@ -37,9 +37,11 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'figaro'
 
-group :production do
-  gem 'pg',
-  gem 'rails_12factor'
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
+
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
