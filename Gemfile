@@ -44,18 +44,23 @@ gem 'rails_12factor', group: :production
 
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
-  # Use sqlite3 as the database for Active Record
+  gem 'factory_girl_rails', '~> 4.0'
   gem 'sqlite3'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'guard-rspec', require: false
 end
 
+group :test do
+ gem 'shoulda-matchers', '~> 3.1'
+ gem 'capybara'
+ gem 'launchy'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'spring'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
